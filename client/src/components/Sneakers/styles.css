@@ -1,0 +1,176 @@
+@media only screen and (min-width: 320px) and (max-width: 768px) and (min-height: 320px) and (max-height: 850px){
+  #img {
+    max-width: 370px;
+    max-height: 400px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) and (min-height: 320px) and (max-height: 850px) {
+#ControlledOpen{
+    position: relative;
+    padding-top: 30rem;
+    left: 7.1rem;
+  }
+#PriceParagraphTag{
+  display: inline-block;
+  position: relative;
+  padding-top: 31rem;
+  left: 7rem;
+}
+#Heading3{
+ position: absolute;
+ top: 12rem;
+ left: 4rem;
+ white-space: nowrap;
+ overflow: hidden;
+
+
+}
+}
+
+/* --------DESKTOP VERSION BEYOND THIS POINT --------------------*/
+
+#mainProductDiv {
+  position: relative;
+}
+
+
+#Heading3 {
+  float: right;
+  margin-right: 10em;
+  margin-top: 7em;
+}
+
+#PriceParagraphTag {
+    float: right;
+    margin-top: 5em;
+    margin-right: 17em;
+    position: relative;
+    top: -30em;
+}
+
+#ControlledOpen {
+  float: right;
+  position: relative;
+  top: -22em;
+  margin-right: -6em;
+}
+
+#whole {
+  display: inline-table;
+  margin: 0 auto;
+  margin-left: 0.8rem;
+
+}
+
+#images{
+  width: 326px;
+  height: 246px;
+  
+}
+
+#sneakBtn{
+  padding: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+p{
+  padding-top: 1rem;
+}
+  .container {
+    position: relative;
+    width: 50%;
+  }
+
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 1;
+    left: 0;
+    right: 0;
+    height: 246px;
+    width: 326px;
+    opacity: 0;
+    transition: 2s ease;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .flip-container:hover .overlay {
+    opacity: 1;
+  }
+
+  #text {
+    color: rgb(24, 11, 11);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+
+.flip-container {
+  flex: 50%;
+  max-width: 40%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 4px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper,
+.flip-container:hover .flipper{
+  transform: rotateY(180deg);
+ 
+}
+
+.flip-container,
+.front,
+.back {
+  width: 315px;
+  height: 235px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  
+}
