@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import AddCartButton from './components/addToCart';
 import products from '../../products.js'
 
+
 export default class Product extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,6 @@ export default class Product extends Component {
       return this.props.match.params.id === product.id
     }).pop()
   }
-
   render() {
     const product = this.getProduct()
     console.log(product)

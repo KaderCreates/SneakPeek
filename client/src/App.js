@@ -66,10 +66,6 @@ class App extends Component {
     console.log("state Update in App.js");
   };
 
-  
-  
-
-
   render() {
     
     

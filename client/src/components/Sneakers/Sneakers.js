@@ -23,8 +23,9 @@ class Sneaker extends Component {
 
     return (
       <>
-        <Navbar />
         <div>
+          <br/>
+          <br/>
           {products.map((product, index) =>
             <div key={product.id + " " + index} id="whole" className="flip-container" >
               <div className="flipper">
@@ -56,6 +57,9 @@ class Sneaker extends Component {
             </div>
           )}
         </div>
+        <br/>
+        <br/>
+        <Navbar />
       </>
 
     );

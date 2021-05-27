@@ -2,7 +2,11 @@ const mysql = require('mysql2');
 const express = require('express');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const nodemailer = require('nodemailer')
+const cors = require('cors');
 const app = express();
+app.use(cors());
+require('dotenv').config();
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -94,3 +98,42 @@ exports.login = function (req, res) {
     }
   });
 }
+
+const contactEmail = nodemailer.createTransport({
+  host: process.env.SERVICE_HOST,
+  port: process.env.SERVICE_PORT,
+  secure: false,
+  auth: {
+    user: process.env.USER_NAME,
+    pass: process.env.USER_PASSWORD,
+  },
+});
+
+contactEmail.verify(function (error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages");
+  }
+});
+
+exports.contact = (req,res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const message = req.body.message; 
+    const mail = {
+      from: name,
+      to: process.env.USER_NAME,
+      subject: "Contact Form Submission",
+      html: `<p>Name: ${name}</p>
+             <p>Email: ${email}</p>
+             <p>Message: ${message}</p>`,
+    };
+    contactEmail.sendMail(mail, (error) => {
+      if (error) {
+        res.json({ status: "ERROR" });
+      } else {
+        res.json({ status: "Message Sent" });
+      }
+    });
+};

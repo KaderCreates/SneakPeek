@@ -3,10 +3,12 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
-const app = express();
 const port = process.env.PORT || 5000;
 const login = require('./routes/loginroutes');
+const cors = require('cors');
+const nodemailer = require("nodemailer");
 
+const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(function (req, res, next) {
@@ -24,7 +26,10 @@ router.get('/', function (req, res) {
 });
 router.post('/register', login.register);
 router.post('/login', login.login)
+router.post('/contact', login.contact)
 app.use('/api', router);
+app.use(cors());
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
