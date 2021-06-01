@@ -13,19 +13,19 @@ class Sneaker extends Component {
   constructor() {
     super();
     this.state = {
-     
+
     }
   }
-
   
   render() {
-    
+
 
     return (
       <>
         <div>
-          <br/>
-          <br/>
+          <br />
+          <Navbar />
+          <br />
           {products.map((product, index) =>
             <div key={product.id + " " + index} id="whole" className="flip-container" >
               <div className="flipper">
@@ -48,7 +48,7 @@ class Sneaker extends Component {
                       <Button
                         id='sneakbtn'
                       >
-                         View
+                        View
                       </Button>
                     </Link>
                   </div>
@@ -57,9 +57,8 @@ class Sneaker extends Component {
             </div>
           )}
         </div>
-        <br/>
-        <br/>
-        <Navbar />
+        <br />
+        <br />
       </>
 
     );
