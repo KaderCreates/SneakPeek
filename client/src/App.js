@@ -77,7 +77,7 @@ class App extends Component {
           <SideMenu />  
           <Cart />
             <Route exact path='/' component={Home}/>
-            <Route path='/preorders' component={Preorder} />
+            <Route path={'/preorders'} component={Preorder} />
             <Route path='/sneakers' component={Sneakers} />
             <Route path='/contact' component={Contact} />
             <Route path='/about' component={About} />
