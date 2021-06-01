@@ -1,6 +1,19 @@
+
+  @media only screen 
+  and (device-width : 350px) 
+  and (device-height : 850px) 
+  and (-webkit-device-pixel-ratio : 3) { 
+ .each-fade {
+      width: 100%;
+      height: 100%;
+      padding-top: 2rem;
+    }
+  }
+  
+
 .slide-container {
-  width: 80%;
-  margin: center;
+    width: 100%;
+    margin: center;
 }
 
 h3 {
@@ -16,37 +29,33 @@ h3 {
 }
 
 .each-slide span {
-  padding: 10px;
+  padding: 20px;
   font-size: 20px;
   background: #efefef;
   text-align: center;
 }
 
-.each-fade {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding-left: 19rem;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-}
+
+
 
 .each-fade .image-container {
-  width: 75%;
+  width: 100%;
+  size: 100%;
+  height: auto;
   overflow: visible;
 }
 
 .each-fade .image-container img {
-  width: 77%;
-  height: 10%;
+  width: 100%;
+  height: 100%;
 }
 
 .each-fade h2 {
-  width: 25%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   background: #adceed;
 }
+
