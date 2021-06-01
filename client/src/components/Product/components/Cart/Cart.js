@@ -38,14 +38,15 @@ class CartDrawer extends Component {
       let cl = window.localStorage.getItem('cart')
       this.productsInCart = [this.getProduct(cl)]
       this.setState({
-        ['right']: true,
+        ['right']: true
       });
     })
+    this.getProduct = this.getProduct.bind(this)
   }
 
   classes = styles
   state = {
-    right: false
+    right: false,
   }
 
   getProduct = (productId) => {
@@ -62,6 +63,8 @@ class CartDrawer extends Component {
   };
 
   render() {
+    console.log(this.productsInCart)
+    const cartData = JSON.parse(localStorage.getItem("cartData"))
     const sideList = side => (
       <div
         className={this.classes.list}
@@ -69,16 +72,31 @@ class CartDrawer extends Component {
         onClick={this.toggleDrawer(side, false)}
         onKeyDown={this.toggleDrawer(side, false)}
       >
+
         <List>
           <Divider />
           <ListItem
-            key={'text'}>
-            <ListItemText
-              primary={"Your cart is empty"} />
+            key={'text'}
+          >
+            {this.productsInCart.length > 0 ? cartData.map(({ id, title, price, size }) => {
+
+              return <div key={id}>
+                <ListItemText
+                  primary={title} />
+                <ListItemText
+                  primary={price} />
+                <ListItemText
+                  primary={size} />
+              </div>
+            }) : <ListItemText
+              primary={"Collection not released yet"}
+            />}
+
           </ListItem>
         </List>
       </div>
     );
+
 
     return (
       <div style={this.classes.addToCartBtn}>
