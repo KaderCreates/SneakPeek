@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import history from '../../history'
 import { useState } from 'react';
+import swal from 'sweetalert';
 import { Redirect } from 'react-router-dom'
 import { withRouter } from "react-router-dom";
 import { Router } from 'react-router';
@@ -41,7 +42,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'red',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -59,22 +60,18 @@ const handleSignup = (fname, lname, email, password, propsfn) => {
   const emailtxt = email.emailVal;
   const passwordtxt = password.passwordVal;
   const data = {first_name: fnametxt, last_name: lnametxt, email: emailtxt, password_: passwordtxt};
-  console.log(propsfn);
-  console.log('data');
-  console.log(data);
 
   fetch('/api/register', {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, cors, *same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
-      // "Content-Type": "application/x-www-form-urlencoded",
     },
-    redirect: "follow", // manual, *follow, error
-    referrer: "no-referrer", // no-referrer, *client
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
+    redirect: "follow",
+    referrer: "no-referrer",
+    body: JSON.stringify(data)
   })
     .then(function (response) {
       return response.json();
@@ -83,10 +80,9 @@ const handleSignup = (fname, lname, email, password, propsfn) => {
       if (signedUp) {
         propsfn.props.UpdateLogInfo(myJson.userRole, true);
         history.push('/')
-        console.log("Already signed up");
+      } else {
+        swal("Failed to register", "Email already exists. Try Logging in instead", "error")
       }
-      console.log(JSON.stringify(myJson));
-      console.log("props history",propsfn.history);
     });
  
 }

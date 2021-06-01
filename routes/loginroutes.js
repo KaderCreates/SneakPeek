@@ -74,7 +74,7 @@ exports.login = function (req, res) {
         if (results[0].password_ == password) {
           res.send({
             "code": 200,
-            "success": "login sucessfull",
+            "success": "login successfull",
             "IsLogged": true,
             "userRole":"User"
           });

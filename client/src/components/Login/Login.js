@@ -20,8 +20,7 @@ import { withRouter } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Router } from 'react-router';
 import { Link } from '@material-ui/core';
-// import { login } from '../../../../routes/loginroutes';
-
+import swal from 'sweetalert';
 
 
 
@@ -46,7 +45,7 @@ const styles = theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: 'red',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -57,11 +56,6 @@ const styles = theme => ({
   },
 });
 
-
-
-
-
-
 function LogIn(props) {
   const { classes } = props;
   const [emailval, setEmail] = useState('');
@@ -71,24 +65,19 @@ function LogIn(props) {
     const emailtxt = email.emailval;
     const passwordtxt = password.passwordval;
     const data = { email: emailtxt, password: passwordtxt };
-    
-  
-    console.log(propsfn);
-    console.log('data');
-    console.log(data);
-  
+
+
     fetch('/api/login', {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, cors, *same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
+      method: "POST",
+      mode: "cors", 
+      cache: "no-cache", 
+      credentials: "same-origin",
       headers: {
-        "Content-Type": "application/json",
-        // "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json"
       },
-      redirect: "follow", // manual, *follow, error
-      referrer: "no-referrer", // no-referrer, *client
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
+      redirect: "follow",
+      referrer: "no-referrer",
+      body: JSON.stringify(data)
     })
       .then(function (response) {
         return response.json();
@@ -97,11 +86,11 @@ function LogIn(props) {
         if (looged) {
           propsfn.props.UpdateLogInfo(myJson.userRole, true);
           history.push('/')
-          console.log("propsfn.props",propsfn.props);
+        } else {
+          swal("Failed to login", "Username and/or password is incorrect", "error")
         }
-        console.log(JSON.stringify(myJson));
       });
-  
+
   }
 
   return (
