@@ -75,47 +75,47 @@ class SideMenu extends React.Component {
           </ListItem>
         </List>
         <List>
-            <ListItem
-              button
-              component={Link}
-              to='preorders'
-              key={'preorders'}>
-              <ListItemIcon>
-                <SVGicon name="preorder" width={30} />
-              </ListItemIcon>
-              <ListItemText primary={'Preorders'} />
-            </ListItem>
+          <ListItem
+            button
+            component={Link}
+            to='preorders'
+            key={'preorders'}>
+            <ListItemIcon>
+              <SVGicon name="preorder" width={30} />
+            </ListItemIcon>
+            <ListItemText primary={'Preorders'} />
+          </ListItem>
         </List>
         <br /><br />
         <List>
-            <ListItem
-              button
-              component={Link}
-              to='login'
-              key={'login'}>
-              <ListItemText primary={'Log in'} />
-            </ListItem>
-            <ListItem
-              button
-              component={Link}
-              to='signup'
-              key={'createaccount'}>
-              <ListItemText primary={'Create Account'} />
-            </ListItem>
-            <ListItem
-              button
-              component = {Link}
-              to='about'
-              key={'about'}>
-              <ListItemText primary={'About'} />
-            </ListItem>
-            <ListItem
-              button
-              component={Link}
-              to='contact'
-              key={'contact'}>
-              <ListItemText primary={'Contact'} />
-            </ListItem>
+          <ListItem
+            button
+            component={Link}
+            to='login'
+            key={'login'}>
+            <ListItemText primary={'Log in'} />
+          </ListItem>
+          <ListItem
+            button
+            component={Link}
+            to='signup'
+            key={'createaccount'}>
+            <ListItemText primary={'Create Account'} />
+          </ListItem>
+          <ListItem
+            button
+            component={Link}
+            to='about'
+            key={'about'}>
+            <ListItemText primary={'About'} />
+          </ListItem>
+          <ListItem
+            button
+            component={Link}
+            to='contact'
+            key={'contact'}>
+            <ListItemText primary={'Contact'} />
+          </ListItem>
         </List>
       </div>
     );
