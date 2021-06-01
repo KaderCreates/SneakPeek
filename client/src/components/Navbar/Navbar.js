@@ -24,9 +24,9 @@ const styles = {
     textAlign: 'center'
   },
   font: {
-    fontSize: '20px',
+    fontSize: '18px',
     outline: 'none',
-    color: '#FFFFFF',
+    color: 'black',
     padding: '1rem'
   }
 };
@@ -35,25 +35,25 @@ function NavBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar style={{ background: '#2E3B55' }} position="static">
+      <AppBar style={{ background: 'transparent', boxShadow: 'none' }} position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-          <div style={styles.center}>
-          <Link to='/' style={{ textDecoration: 'none' }}>
-            <Button style={styles.font} color="inherit">Home</Button>
-          </Link>
-          <Link to='/sneakers' style={{ textDecoration: 'none' }}>
-            <Button style={styles.font} color="inherit">Sneaker's</Button>
-          </Link>
-          <Link to='preorders' style={{ textDecoration: 'none' }}>
-            <Button style={styles.font} color="inherit">Pre-Orders</Button>
-          </Link>
-          <Link to='contact' style={{ textDecoration: 'none' }}>
-            <Button  style={styles.font} color="inherit">Contact</Button>
-          </Link>
-          </div>
+            <div style={styles.center}>
+              <Link to='/' style={{ textDecoration: 'none' }}>
+                <Button style={styles.font} color="inherit">Home</Button>
+              </Link>
+              <Link to='/sneakers' style={{ textDecoration: 'none' }}>
+                <Button style={styles.font} color="inherit">Sneaker's</Button>
+              </Link>
+              <Link to='/preorders' style={{ textDecoration: 'none' }}>
+                <Button style={styles.font} color="inherit">Pre-Orders</Button>
+              </Link>
+              <Link to='/contact' style={{ textDecoration: 'none' }}>
+                <Button style={styles.font} color="inherit">Contact</Button>
+              </Link>
+            </div>
           </Typography>
         </Toolbar>
       </AppBar>
