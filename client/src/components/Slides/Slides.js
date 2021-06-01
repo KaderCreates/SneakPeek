@@ -1,24 +1,30 @@
+import { relative } from 'path';
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import './styles.css'
+import MediaQuery from 'react-responsive'
+import { Container } from '@material-ui/core';
+
+
 
 const fadeImages = [
-  require('./images/yeezy.jpg'),
-  require('./images/yeezy2.jpg'),
-  require('./images/yeezy3.jpg'),
-  require('./images/jordans.jpg'),
-  require('./images/jordan3.jpg')
+  require('../assets/retrofiba.jpeg'),
+  require('../assets/reversetaxi.jpeg'),
+  require('../assets/airjordan12frenchblues.jpeg'),
+  require('../assets/AirJordan6RetroInfared2019.jpeg'),
+  require('../assets/AirJordan11RetroConcord2018.jpeg')
 ];
 
 const fadeProperties = {
-  duration: 5000,
+  duration: 3000,
   transitionDuration: 500,
   infinite: true,
-  arrows: false
+  arrows: false,
 }
 
 const Slideshow = () => {
   return (
+
     <Fade {...fadeProperties}>
       <div className="each-fade">
         <div className="image-container">
