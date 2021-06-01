@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Theme} from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -17,13 +17,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ControlledOpenSelect() {
+export default function ControlledOpenSelect(props) {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   function handleChange(event) {
     setAge(event.target.value);
+    props.setSize(event.target.value)
   }
 
   function handleClose() {
@@ -49,8 +50,10 @@ export default function ControlledOpenSelect() {
             id: 'demo-controlled-open-select',
           }}
         >
-          
-          <MenuItem value={10}>10.5</MenuItem>
+
+          <MenuItem value={9}>9</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+          <MenuItem value={11}>11</MenuItem>
         </Select>
       </FormControl>
     </form>
