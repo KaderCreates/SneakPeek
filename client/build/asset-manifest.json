@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7ebc0b4f.chunk.css",
+    "main.js": "/static/js/main.f7f21ee8.chunk.js",
+    "main.js.map": "/static/js/main.f7f21ee8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.ea845e6e.chunk.js": "/static/js/2.ea845e6e.chunk.js",
+    "static/js/2.ea845e6e.chunk.js.map": "/static/js/2.ea845e6e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5fb2db97fdaebb2ef8d69e7c64556e92.js": "/precache-manifest.5fb2db97fdaebb2ef8d69e7c64556e92.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7ebc0b4f.chunk.css.map": "/static/css/main.7ebc0b4f.chunk.css.map",
+    "static/js/2.ea845e6e.chunk.js.LICENSE.txt": "/static/js/2.ea845e6e.chunk.js.LICENSE.txt",
+    "static/media/Air-Jordan-11-Retro-Cap-And-Gown-Product.jpeg": "/static/media/Air-Jordan-11-Retro-Cap-And-Gown-Product.a7851894.jpeg",
+    "static/media/Air-Jordan-11-Retro-Concord-2018-1.jpeg": "/static/media/Air-Jordan-11-Retro-Concord-2018-1.197fb005.jpeg",
+    "static/media/Air-Jordan-12-Retro-Black-Red-Flu-Game-2016-Product.webp": "/static/media/Air-Jordan-12-Retro-Black-Red-Flu-Game-2016-Product.e3a6bf82.webp",
+    "static/media/Air-Jordan-12-Retro-Reverse-Flu-Game-Product.webp": "/static/media/Air-Jordan-12-Retro-Reverse-Flu-Game-Product.4beae8ed.webp",
+    "static/media/Air-Jordan-12-Retro-The-Master-Product.jpeg": "/static/media/Air-Jordan-12-Retro-The-Master-Product.7a9d1fcf.jpeg",
+    "static/media/AirJordan11RetroConcord2018.jpeg": "/static/media/AirJordan11RetroConcord2018.8b95dc3a.jpeg",
+    "static/media/AirJordan11RetroSpaceJam2016.jpeg": "/static/media/AirJordan11RetroSpaceJam2016.842606ec.jpeg",
+    "static/media/AirJordan6RetroInfared2019.jpeg": "/static/media/AirJordan6RetroInfared2019.1853b146.jpeg",
+    "static/media/airjordan12frenchblues.jpeg": "/static/media/airjordan12frenchblues.0e2bbd25.jpeg",
+    "static/media/retrofiba.jpeg": "/static/media/retrofiba.eaeefc6b.jpeg",
+    "static/media/reversetaxi.jpeg": "/static/media/reversetaxi.b758d54c.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.ea845e6e.chunk.js",
+    "static/css/main.7ebc0b4f.chunk.css",
+    "static/js/main.f7f21ee8.chunk.js"
+  ]
+}
