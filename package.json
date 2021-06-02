@@ -8,8 +8,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "start": "node server.js",
-    "client": "npm run start --prefix client",
-    "postinstall": "ng build"
+    "client": "npm run start --prefix client"
   },
   "repository": {
     "type": "git",
