@@ -61,7 +61,7 @@ const handleSignup = (fname, lname, email, password, propsfn) => {
   const passwordtxt = password.passwordVal;
   const data = {first_name: fnametxt, last_name: lnametxt, email: emailtxt, password_: passwordtxt};
 
-  fetch('https://sneakpeekmock.herokuapp.com/api/register', {
+  fetch('https://sneakpeekmock.herokuapp.com/sneakpeek/api/register', {
     method: "POST",
     mode: "cors",
     cache: "no-cache",
