@@ -53,6 +53,9 @@ function NavBar(props) {
               <Link to='/contact' style={{ textDecoration: 'none' }}>
                 <Button style={styles.font} color="inherit">Contact</Button>
               </Link>
+              <Link to='/about' style={{ textDecoration: 'none' }}>
+                <Button style={styles.font} color="inherit">About</Button>
+              </Link>
             </div>
           </Typography>
         </Toolbar>

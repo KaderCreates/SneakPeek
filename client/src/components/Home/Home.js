@@ -21,6 +21,10 @@ const styles = {
   img: {
     width: '100%',
     textAlign: 'center'
+  },
+  drop: {
+    textAlign: 'center',
+    paddingTop: '1rem'
   }
 }
 
@@ -39,6 +43,9 @@ const Home = () => {
         </div>
       </Box>
       <div>
+        <div style={styles.drop}>
+          Release in June 2021
+        </div>
       </div>
     </div>
   );
