@@ -33,6 +33,6 @@ app.use(cors());
 
 app.listen(process.env.PORT || port, () => console.log(`Listening on port ${port}`));
 
-app.get('/sneakpeek', (req, res) => {
+app.get('https://sneakpeekmock.herokuapp.com/sneakpeek', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
