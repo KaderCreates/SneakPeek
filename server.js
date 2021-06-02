@@ -4,7 +4,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const port = process.env.PORT || 5000;
-const login = require('./routes/loginroutes');
+const login = require('./routes/routes');
 const cors = require('cors');
 const nodemailer = require("nodemailer");
 
@@ -31,7 +31,7 @@ app.use('/api', router);
 app.use(cors());
 
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Listening on port ${port}`));
 
 app.get('/sneakpeek', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
