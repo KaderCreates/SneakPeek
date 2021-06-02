@@ -81,7 +81,7 @@ const handleSignup = (fname, lname, email, password, propsfn) => {
         propsfn.props.UpdateLogInfo(myJson.userRole, true);
         history.push('/')
       } else {
-        swal("Failed to register", "Email already exists. Try Logging in instead", "error")
+        swal("Failed to register", "Email already exists. Try Logging in instead.", "error")
       }
     });
  
