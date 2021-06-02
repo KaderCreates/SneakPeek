@@ -67,7 +67,7 @@ function LogIn(props) {
     const data = { email: emailtxt, password: passwordtxt };
 
 
-    fetch('/api/login', {
+    fetch('https://sneakpeekmock.herokuapp.com/api/login', {
       method: "POST",
       mode: "cors", 
       cache: "no-cache", 
