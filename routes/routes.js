@@ -9,8 +9,10 @@ app.use(cors());
 require('dotenv').config();
 
 
+const connection;
+
 const connectDb = () => {
-  const connection = mysql.createConnection({
+  connection = mysql.createConnection({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b0363e876fccb4',
     password: '2cf2204c',
