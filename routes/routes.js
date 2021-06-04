@@ -14,8 +14,10 @@ require('dotenv').config();
       password: '2cf2204c',
       database: 'heroku_687c1d24e3c73a8'
     });
-  if (error) {
-    throw error
+  if (!err) {
+    console.log('noice')
+  } else {
+    console.log('not noice')
   }
   
 
