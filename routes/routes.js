@@ -4,23 +4,18 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const nodemailer = require('nodemailer')
 const cors = require('cors');
+const Pool = require('mysql2/typings/mysql/lib/Pool');
 const app = express();
 app.use(cors());
 require('dotenv').config();
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
   user: 'b0363e876fccb4',
   password: '2cf2204c',
   database: 'heroku_687c1d24e3c73a8'
 });
-connection.connect(function (err) {
-  if (!err) {
-    console.log("Database is connected...");
-  } else {
-    console.log("Error connecting to database...", err);
-  }
-});
+connection.query('select 1 + 1', (err,rows) => { /* */});
 
 exports.register = function (req, res) {
   const today = new Date();
