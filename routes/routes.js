@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
   connection.on('error', connectDb());
 }
 
-let reconnect = connectDb;
+let reconnect = connectDb();
 
 exports.register = function (req, res) {
   const today = new Date();
