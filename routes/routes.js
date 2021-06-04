@@ -9,7 +9,7 @@ app.use(cors());
 require('dotenv').config();
 
 
-const connection = ""
+const connection = null;
 
 const connectDb = () => {
   connection = mysql.createConnection({
