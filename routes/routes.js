@@ -8,17 +8,21 @@ const app = express();
 app.use(cors());
 require('dotenv').config();
 
-const connectDb = () => { 
-const connection = mysql.createConnection({
-    host: 'us-cdbr-east-04.cleardb.com',
-    user: 'b0363e876fccb4',
-    password: '2cf2204c',
-    database: 'heroku_687c1d24e3c73a8'
-  });
-  connection.on('error', connectDb());
-}
 
-let reconnect = connectDb();
+let connect = setTimeout(() => {
+  const connectDb = () => { 
+  const connection = mysql.createConnection({
+      host: 'us-cdbr-east-04.cleardb.com',
+      user: 'b0363e876fccb4',
+      password: '2cf2204c',
+      database: 'heroku_687c1d24e3c73a8'
+    });
+    connection.on('error', connectDb());
+  }
+  
+}, 5000)
+
+let reconnect = connect;
 
 exports.register = function (req, res) {
   const today = new Date();
