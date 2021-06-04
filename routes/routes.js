@@ -17,7 +17,7 @@ require('dotenv').config();
     password: '2cf2204c',
     database: 'heroku_687c1d24e3c73a8'
   });
-  connection.on('error', connectDb());
+  connection.on('error', connection);
 
 
 
