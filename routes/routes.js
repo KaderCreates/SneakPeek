@@ -8,18 +8,18 @@ const app = express();
 app.use(cors());
 require('dotenv').config();
 
-let connection;
 
 const connectDb = () => {
-  connection = mysql.createConnection({
+   const connection = mysql.createConnection({
     host: 'us-cdbr-east-04.cleardb.com',
     user: 'b0363e876fccb4',
     password: '2cf2204c',
     database: 'heroku_687c1d24e3c73a8'
   });
   connection.on('error', connectDb());
-}
 
+}
+const connect = connectDb();
 
 exports.register = function (req, res) {
   const today = new Date();
@@ -31,7 +31,7 @@ exports.register = function (req, res) {
     "created_date": today,
     "modified_date": today
   }
-  connection.query('INSERT INTO users SET ?', [users] , function (error, results, fields) {
+  connect.query('INSERT INTO users SET ?', [users] , function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.send({
@@ -59,7 +59,7 @@ exports.login = function (req, res) {
 
   const email = req.body.email;
   const password = req.body.password;
-  connection.query('SELECT * FROM users WHERE email = ? AND password_ = ?', [email, password], function (error, results, fields) {
+  connect.query('SELECT * FROM users WHERE email = ? AND password_ = ?', [email, password], function (error, results, fields) {
     if (error) {
        console.log("error ocurred",error);
       res.send({
