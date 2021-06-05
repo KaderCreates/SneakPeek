@@ -32,6 +32,7 @@ exports.register = function (req, res) {
     "created_date": today,
     "modified_date": today
   }
+  console.log("connection before connect",connection);
   connection.connect();
   connection.query('INSERT INTO users SET ?', [users] , function (error, results, fields) {
     if (error) {
@@ -52,6 +53,7 @@ exports.register = function (req, res) {
         "userRole": "User"
       });
     }
+    console.log("connection before end ",connection);
     connection.end();
   });
 };
@@ -62,6 +64,7 @@ exports.login = function (req, res) {
 
   const email = req.body.email;
   const password = req.body.password;
+  console.log("connection before connect",connection);
   connection.connect()
   connection.query('SELECT * FROM users WHERE email = ? AND password_ = ?', [email, password], function (error, results, fields) {
     if (error) {
@@ -100,6 +103,7 @@ exports.login = function (req, res) {
       }
     }
   });
+  console.log("connection before end ",connection);
 connection.end()
 }
 
