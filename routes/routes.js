@@ -32,6 +32,7 @@ exports.register = function (req, res) {
     "created_date": today,
     "modified_date": today
   }
+  connection.connect();
   connection.query('INSERT INTO users SET ?', [users] , function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
@@ -51,6 +52,7 @@ exports.register = function (req, res) {
         "userRole": "User"
       });
     }
+    connection.end();
   });
 };
 
@@ -60,6 +62,7 @@ exports.login = function (req, res) {
 
   const email = req.body.email;
   const password = req.body.password;
+  connection.connect()
   connection.query('SELECT * FROM users WHERE email = ? AND password_ = ?', [email, password], function (error, results, fields) {
     if (error) {
        console.log("error ocurred",error);
@@ -97,6 +100,7 @@ exports.login = function (req, res) {
       }
     }
   });
+connection.end()
 }
 
 const contactEmail = nodemailer.createTransport({
@@ -138,3 +142,9 @@ exports.contact = (req,res) => {
     });
 };
 
+
+function EstablishConnection(){
+  if (connection.status == "close") {
+    connection.open()
+  }
+}
