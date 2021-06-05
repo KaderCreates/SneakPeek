@@ -22,6 +22,17 @@ require('dotenv').config();
 //   }
 // });
 
+function CreateConnection()
+{
+  const connection = mysql.createConnection({
+    host: 'us-cdbr-east-04.cleardb.com',
+    user: 'b0363e876fccb4',
+    password: '2cf2204c',
+    database: 'heroku_687c1d24e3c73a8'
+  });
+  return connection;
+}
+
 exports.register = function (req, res) {
   const today = new Date();
   const users = {
@@ -33,12 +44,7 @@ exports.register = function (req, res) {
     "modified_date": today
   }
 
-  const connection = mysql.createConnection({
-    host: 'us-cdbr-east-04.cleardb.com',
-    user: 'b0363e876fccb4',
-    password: '2cf2204c',
-    database: 'heroku_687c1d24e3c73a8'
-  });
+  let connection = CreateConnection();
   console.log("connection before connect",connection);
   connection.connect();
   connection.query('INSERT INTO users SET ?', [users] , function (error, results, fields) {
@@ -71,12 +77,7 @@ exports.login = function (req, res) {
 
   const email = req.body.email;
   const password = req.body.password;
-  const connection = mysql.createConnection({
-    host: 'us-cdbr-east-04.cleardb.com',
-    user: 'b0363e876fccb4',
-    password: '2cf2204c',
-    database: 'heroku_687c1d24e3c73a8'
-  });
+  let connection = CreateConnection();
   console.log("connection before connect",connection);
   connection.connect()
   connection.query('SELECT * FROM users WHERE email = ? AND password_ = ?', [email, password], function (error, results, fields) {
