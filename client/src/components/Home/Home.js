@@ -44,7 +44,7 @@ const Home = () => {
       </Box>
       <div>
         <div style={styles.drop}>
-          Release in June 2021
+          Opening soon. Be the first to know when we launch. Subscribe to our newsletter!
         </div>
       </div>
     </div>
